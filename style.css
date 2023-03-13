@@ -5,24 +5,93 @@
     text-align: center;
     position: relative;
 }
-a:hover {
-    color: lightpink;
-}
 body {
     background: rgb(139, 199, 255);
     top: 100px;
+    min-block-size: 100%;
+    min-inline-size: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    display: grid;
+    place-content: center;
+}
+
+h1::before {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+h1:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+h1::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    inset: 0 0 0 0;
+    background: hsl(200 100% 80%);
+    z-index: -1;
+    transition: transform .3s ease;
 }
 h1 {
+    position: relative;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 40px;
+    font-size: 54px;
 }
 h2 {
-    width: 700px;
-    font-size: 20px;
+    font-size: 30px;
 }
 h3 {
-    font-size: 18px;
+    font-size: 24px;
 }
-#link {
-    top: 100px;
+h4 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+div#links {
+    background-color: rgb(106, 160, 204);
+    width: 420px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    top: 50px;
+}
+div#top-banner {
+    width: 100%;
+    height: 3px;
+    background-color: rgb(106, 160, 204);
+}
+div {
+    width: 700px;
+}
+body.book h3 {
+    text-align: center;
+    width: 60%;
+}
+body.book div {
+    background-color: rgb(119, 167, 212);
+    padding-left: 20px;
+    padding-right: 20px;
+}
+body.book div p {
+    text-align: left;
+    text-indent: 30px;
+}
+
+a {
+    font-size: 16px;
+}
+a:link {
+    color: blue;
+}
+a:visited {
+    color: aquamarine;
+}
+a:hover {
+    color: lightpink;
+    text-decoration: line-through;
 }
