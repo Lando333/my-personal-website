@@ -16,6 +16,11 @@ body {
     place-content: center;
 }
 
+#links {
+    min-width: 700px;
+    min-height: 60px;
+}
+
 h1::before {
     transform: scaleX(0);
     transform-origin: bottom right;
